@@ -25,13 +25,23 @@
             <tbody>
                 {% for i in info %}
                     <tr>
-                        <th scope="row">{{ i['ticker'] }}</th>
-                        <td>{{ '${:,.2f}'.format(i['initial investment']) }}</td>
-                        <td>{{ '${:,.2f}'.format(i['final balance']) }}</td>
-                        <td>{{ '%0.1f' % (i['yield']*100) }}%</td>
-                        <td>{{ '%0.1f' % (i['cagr']*100) }}%</td>
-                        <td>{{ i['period'] }}</td>
-                        <td>{{ i['trades'] }}</td>
+                        {% if i['initial investment'] < i['final balance'] %}
+                            <th scope="row" style="color: #3dfc03;">{{ i['ticker'] }}</th>
+                            <td style="color: #3dfc03;">{{ '${:,.2f}'.format(i['initial investment']) }}</td>
+                            <td style="color: #3dfc03;">{{ '${:,.2f}'.format(i['final balance']) }}</td>
+                            <td style="color: #3dfc03;">{{ '%0.1f' % (i['yield']*100) }}%</td>
+                            <td style="color: #3dfc03;">{{ '%0.1f' % (i['cagr']*100) }}%</td>
+                            <td style="color: #3dfc03;">{{ i['period'] }}</td>
+                            <td style="color: #3dfc03;">{{ i['trades'] }}</td>
+                        {% else %}
+                            <th scope="row" style="color: #fc0303;">{{ i['ticker'] }}</th>
+                            <td style="color: #fc0303;">{{ '${:,.2f}'.format(i['initial investment']) }}</td>
+                            <td style="color: #fc0303;">{{ '${:,.2f}'.format(i['final balance']) }}</td>
+                            <td style="color: #fc0303;">{{ '%0.1f' % (i['yield']*100) }}%</td>
+                            <td style="color: #fc0303;">{{ '%0.1f' % (i['cagr']*100) }}%</td>
+                            <td style="color: #fc0303;">{{ i['period'] }}</td>
+                            <td style="color: #fc0303;">{{ i['trades'] }}</td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
             </tbody>
