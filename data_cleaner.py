@@ -42,9 +42,11 @@ def clean_data(ticker):
 
     data_clean['years'] = end.year - start.year
     if data_closing[-1] > ma[-1] and data_closing[-2] < ma[-2]:
-        data_clean['entry'] = True
+        data_clean['entry'] = 'entry'
+    elif data_closing[-1] < ma[-1] and data_closing[-2] > ma[-2]:
+        data_clean['entry'] = 'exit'
     else:
-        data_clean['entry'] = False
+        data_clean['entry'] = ''
 
     return data_clean
 

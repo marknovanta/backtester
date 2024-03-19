@@ -43,8 +43,10 @@
                             <td style="color: #fc0303;">{{ i['period'] }}</td>
                             <td style="color: #fc0303;">{{ i['trades'] }}</td>
                         {% endif %}
-                        {% if i['entry'] == true %}
+                        {% if i['entry'] == 'entry' %}
                             <td style="background-color: #3dfc03;">GO</td>
+                        {% elif i['entry'] == 'exit' %}
+                            <td style="background-color: #fc0303;">STOP</td>
                         {% else %}
                             <td></td>
                         {% endif %}
