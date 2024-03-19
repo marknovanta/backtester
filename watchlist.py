@@ -26,5 +26,7 @@ tickers = [
         'GOOGL',
         'GOOD',
         'WPC',
-        'TSLA'
+        'TSLA',
+        'VOW3',
+        'MBG'
     ]
