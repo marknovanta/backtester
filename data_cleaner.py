@@ -1,10 +1,18 @@
 import csv
+import yfinance as yf
 
-def clean_data(file):
+def clean_data(ticker):
 
-    data = {}
+    print(f'Processing {ticker} ...')
+    ticker = yf.Ticker(ticker)
+
+    #data = {}
+    data = ticker.history(period='max', interval='1mo', prepost=True, auto_adjust=False, actions=False)
     data_closing = []
+    for d in data['Close']:
+        data_closing.append(d)
 
+    '''
     # open CSV
     with open(file, mode='r') as f:
         reader = csv.reader(f)
@@ -22,10 +30,10 @@ def clean_data(file):
                 'MA': 0
                 }
             data_closing.append(row[4])
-
+    '''
 
     # popping out the last data because month not yet closed
-    data_closing.pop()
+    #data_closing.pop()
     data_closing.pop()
 
     # calculate moving average
@@ -48,3 +56,5 @@ def clean_data(file):
         data_clean[i] = ma[idx - 9]
 
     return data_clean
+
+

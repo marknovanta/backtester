@@ -8,8 +8,8 @@ def get_info(tickers):
 
 
     for t in tickers:
-        data = './data/' + t + '.csv'
-        info.append(trade_it(t, data, capital))
+
+        info.append(trade_it(t, capital))
 
     return info
 

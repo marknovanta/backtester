@@ -27,6 +27,6 @@ tickers = [
         'GOOD',
         'WPC',
         'TSLA',
-        'VOW3',
-        'MBG'
+        'VOW3.DE',
+        'MBG.DE'
     ]
