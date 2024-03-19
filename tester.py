@@ -8,6 +8,23 @@ def trade_it(ticker, capital):
     entry = data['entry']
     name = data['name']
     industry = data['industry']
+
+    divYield = data['divYield']
+    payout = data['payout']
+    pe = data['pe']
+    current_ratio = data['current_ratio']
+    debt_equity = data['debt_equity']
+    current_price = data['current_price']
+    book_value = data['book_value']
+
+    data.pop('divYield')
+    data.pop('payout')
+    data.pop('pe')
+    data.pop('current_ratio')
+    data.pop('debt_equity')
+    data.pop('current_price')
+    data.pop('book_value')
+
     data.pop('name')
     data.pop('industry')
     data.pop('years')
@@ -63,6 +80,13 @@ def trade_it(ticker, capital):
         'trades': trades,
         'entry': entry,
         'name': name,
-        'industry': industry
+        'industry': industry,
+        'divYield' : divYield,
+        'payout' : payout,
+        'pe' : pe,
+        'current_ratio' : current_ratio,
+        'debt_equity' : debt_equity,
+        'current_price' : current_price,
+        'book_value' : book_value
     }
     return resulting_data

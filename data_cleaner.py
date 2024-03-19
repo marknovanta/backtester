@@ -5,12 +5,47 @@ def clean_data(ticker):
 
     print(f'Processing {ticker} ...')
     ticker = yf.Ticker(ticker)
-
-    name = ticker.info['longName']
+    info = ticker.info
+    name = info['longName']
     try:
-        industry = ticker.info['industry']
+        industry = info['industry']
     except:
         industry = ''
+
+    try:
+        divYield = info['dividendYield']
+    except:
+        divYield = 0
+
+    try:
+        payout = info['payoutRatio']
+    except:
+        payout = 0
+
+    try:
+        pe = info['trailingPE']
+    except:
+        pe = 0
+
+    try:
+        current_ratio = info['currentRatio']
+    except:
+        current_ratio = 0
+
+    try:
+        debt_equity = info['debtToEquity']
+    except:
+        debt_equity = 0
+
+    try:
+        current_price = info['currentPrice']
+    except:
+        current_price = 0
+
+    try:
+        book_value = info['bookValue']
+    except:
+        book_value = 0
 
     data = ticker.history(period='max', interval='1mo', prepost=True, auto_adjust=False, actions=False)
     data_closing = []
@@ -56,6 +91,14 @@ def clean_data(ticker):
 
     data_clean['name'] = name
     data_clean['industry'] = industry
+
+    data_clean['divYield'] = divYield
+    data_clean['payout'] = payout
+    data_clean['pe'] = pe
+    data_clean['current_ratio'] = current_ratio
+    data_clean['debt_equity'] = debt_equity
+    data_clean['current_price'] = current_price
+    data_clean['book_value'] = book_value
 
     return data_clean
 
