@@ -5,6 +5,7 @@ from threading import Timer
 from backtest import get_info
 from watchlist import tickers
 
+
 info = get_info(tickers)
 
 app = Flask(__name__)

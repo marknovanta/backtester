@@ -6,6 +6,10 @@ def trade_it(ticker, capital):
     data = clean_data(ticker)
     periods = data['years']
     entry = data['entry']
+    name = data['name']
+    industry = data['industry']
+    data.pop('name')
+    data.pop('industry')
     data.pop('years')
     data.pop('entry')
 
@@ -57,6 +61,8 @@ def trade_it(ticker, capital):
         'cagr': cagr,
         'period': periods,
         'trades': trades,
-        'entry': entry
+        'entry': entry,
+        'name': name,
+        'industry': industry
     }
     return resulting_data

@@ -14,6 +14,8 @@
             <thead>
               <tr>
                 <th scope="col">TICKER</th>
+                <th scope="col">NAME</th>
+                <th scope="col">INDUSTRY</th>
                 <th scope="col">INITIAL INVESTMENT</th>
                 <th scope="col">FINAL BALANCE</th>
                 <th scope="col">YIELD</th>
@@ -28,6 +30,8 @@
                     <tr>
                         {% if i['initial investment'] < i['final balance'] %}
                             <th scope="row" style="color: #3dfc03;">{{ i['ticker'] }}</th>
+                            <td style="color: #3dfc03;">{{ i['name'] }}</td>
+                            <td style="color: #3dfc03;">{{ i['industry'] }}</td>
                             <td style="color: #3dfc03;">{{ '${:,.2f}'.format(i['initial investment']) }}</td>
                             <td style="color: #3dfc03;">{{ '${:,.2f}'.format(i['final balance']) }}</td>
                             <td style="color: #3dfc03;">{{ '%0.1f' % (i['yield']*100) }}%</td>
@@ -36,6 +40,8 @@
                             <td style="color: #3dfc03;">{{ i['trades'] }}</td>
                         {% else %}
                             <th scope="row" style="color: #fc0303;">{{ i['ticker'] }}</th>
+                            <td style="color: #fc0303;">{{ i['name'] }}</td>
+                            <td style="color: #fc0303;">{{ i['industry'] }}</td>
                             <td style="color: #fc0303;">{{ '${:,.2f}'.format(i['initial investment']) }}</td>
                             <td style="color: #fc0303;">{{ '${:,.2f}'.format(i['final balance']) }}</td>
                             <td style="color: #fc0303;">{{ '%0.1f' % (i['yield']*100) }}%</td>

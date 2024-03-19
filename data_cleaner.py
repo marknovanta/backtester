@@ -6,6 +6,12 @@ def clean_data(ticker):
     print(f'Processing {ticker} ...')
     ticker = yf.Ticker(ticker)
 
+    name = ticker.info['longName']
+    try:
+        industry = ticker.info['industry']
+    except:
+        industry = ''
+
     data = ticker.history(period='max', interval='1mo', prepost=True, auto_adjust=False, actions=False)
     data_closing = []
     for d in data['Close']:
@@ -47,6 +53,9 @@ def clean_data(ticker):
         data_clean['entry'] = 'exit'
     else:
         data_clean['entry'] = ''
+
+    data_clean['name'] = name
+    data_clean['industry'] = industry
 
     return data_clean
 
