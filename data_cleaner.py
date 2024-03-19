@@ -6,34 +6,11 @@ def clean_data(ticker):
     print(f'Processing {ticker} ...')
     ticker = yf.Ticker(ticker)
 
-    #data = {}
     data = ticker.history(period='max', interval='1mo', prepost=True, auto_adjust=False, actions=False)
     data_closing = []
     for d in data['Close']:
         data_closing.append(d)
 
-    '''
-    # open CSV
-    with open(file, mode='r') as f:
-        reader = csv.reader(f)
-        next(reader, None)
-
-        # store data from CSV in a dictionary of dictionaries
-        for row in reader:
-            data[row[0]] = {
-                'open':row[1],
-                'high': row[2],
-                'low': row[3],
-                'close': row[4],
-                'adj_close': row[5],
-                'volume': row[6],
-                'MA': 0
-                }
-            data_closing.append(row[4])
-    '''
-
-    # popping out the last data because month not yet closed
-    #data_closing.pop()
     data_closing.pop()
 
     # calculate moving average
@@ -54,6 +31,17 @@ def clean_data(ticker):
             data_clean[i] = 0
             continue
         data_clean[i] = ma[idx - 9]
+
+    data.reset_index(inplace=True)
+    dates = []
+    for d in data['Date']:
+        dates.append(d)
+
+    start = dates[0]
+    end = dates[-1]
+
+    data_clean['years'] = end.year - start.year
+
 
     return data_clean
 

@@ -1,10 +1,11 @@
 from data_cleaner import clean_data
-from period_extract import extract_years
 import math
 
 def trade_it(ticker, capital):
     # provide data for cleaning
     data = clean_data(ticker)
+    periods = data['years']
+    data.pop('years')
 
     # set trading variables
     starting_balance = capital
@@ -43,7 +44,6 @@ def trade_it(ticker, capital):
 
     strategy_yield = (balance - starting_investment) / starting_investment
 
-    periods = extract_years(ticker)
     cagr = ((balance/starting_investment)**(1/periods))-1
 
 
