@@ -84,5 +84,11 @@ tickers = [
     'SPGI',
     'PFE',
     'VOW3.DE',
-    'MBG.DE'
+    'MBG.DE',
+    'CAG',
+    'NYCB',
+    'ABR',
+    'NWL',
+    'DVN',
+    'MO',
 ]
