@@ -20,6 +20,7 @@
                 <th scope="col">CAGR</th>
                 <th scope="col">YEARS</th>
                 <th scope="col">TRADES</th>
+                <th scope="col">ENTRY AVAILABLE</th>
               </tr>
             </thead>
             <tbody>
@@ -41,6 +42,11 @@
                             <td style="color: #fc0303;">{{ '%0.1f' % (i['cagr']*100) }}%</td>
                             <td style="color: #fc0303;">{{ i['period'] }}</td>
                             <td style="color: #fc0303;">{{ i['trades'] }}</td>
+                        {% endif %}
+                        {% if i['entry'] == true %}
+                            <td style="background-color: #3dfc03;">GO</td>
+                        {% else %}
+                            <td></td>
                         {% endif %}
                     </tr>
                 {% endfor %}

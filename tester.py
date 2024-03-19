@@ -5,7 +5,9 @@ def trade_it(ticker, capital):
     # provide data for cleaning
     data = clean_data(ticker)
     periods = data['years']
+    entry = data['entry']
     data.pop('years')
+    data.pop('entry')
 
     # set trading variables
     starting_balance = capital
@@ -54,6 +56,7 @@ def trade_it(ticker, capital):
         'yield': strategy_yield,
         'cagr': cagr,
         'period': periods,
-        'trades': trades
+        'trades': trades,
+        'entry': entry
     }
     return resulting_data
