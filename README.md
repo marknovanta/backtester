@@ -4,5 +4,5 @@ It further displays financial info relevant to all the stocks in the watchlist
 
 to run it:
 
-python3 app.py - on Mac and Linux
-python app.py - on Windows
+- python3 app.py - on Mac and Linux
+- python app.py - on Windows
