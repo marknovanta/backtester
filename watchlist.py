@@ -91,4 +91,6 @@ tickers = [
     'NWL',
     'DVN',
     'MO',
+    'PARA',
+    'MCO'
 ]
