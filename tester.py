@@ -7,7 +7,7 @@ def trade_it(ticker, capital):
     periods = data['years']
     entry = data['entry']
     name = data['name']
-    industry = data['industry']
+    sector = data['sector']
 
     divYield = data['divYield']
     payout = data['payout']
@@ -26,7 +26,7 @@ def trade_it(ticker, capital):
     data.pop('book_value')
 
     data.pop('name')
-    data.pop('industry')
+    data.pop('sector')
     data.pop('years')
     data.pop('entry')
 
@@ -80,7 +80,7 @@ def trade_it(ticker, capital):
         'trades': trades,
         'entry': entry,
         'name': name,
-        'industry': industry,
+        'sector': sector,
         'divYield' : divYield,
         'payout' : payout,
         'pe' : pe,

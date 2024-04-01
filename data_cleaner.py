@@ -8,9 +8,9 @@ def clean_data(ticker):
     info = ticker.info
     name = info['longName']
     try:
-        industry = info['industry']
+        sector = info['sector']
     except:
-        industry = ''
+        sector = ''
 
     try:
         divYield = info['dividendYield']
@@ -90,7 +90,7 @@ def clean_data(ticker):
         data_clean['entry'] = ''
 
     data_clean['name'] = name
-    data_clean['industry'] = industry
+    data_clean['sector'] = sector
 
     data_clean['divYield'] = divYield
     data_clean['payout'] = payout
