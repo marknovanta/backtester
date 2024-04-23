@@ -93,5 +93,6 @@ tickers = [
     'MO',
     'PARA',
     'MCO',
-    'AVGO'
+    'AVGO',
+    'SEIC'
 ]
