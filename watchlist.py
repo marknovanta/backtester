@@ -94,5 +94,9 @@ tickers = [
     'PARA',
     'MCO',
     'AVGO',
-    'SEIC'
+    'SEIC',
+    'VICI',
+    'ARE',
+    'EPRT',
+    'CCI'
 ]
