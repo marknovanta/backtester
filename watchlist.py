@@ -98,5 +98,6 @@ tickers = [
     'VICI',
     'ARE',
     'EPRT',
-    'CCI'
+    'CCI',
+    'ADC'
 ]
