@@ -32,6 +32,7 @@
                 <th scope="col">DEBT/EQUITY</th>
                 <th scope="col">BOOK VALUE</th>
                 <th scope="col">CURRENT PRICE</th>
+                <th scope="col">P/B</th>
 
               </tr>
             </thead>
@@ -63,6 +64,7 @@
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ (i['debt_equity']/100)|round(1) if i['debt_equity'] else '' }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '${:,.2f}'.format(i['book_value']) if i['book_value'] else '' }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '${:,.2f}'.format(i['current_price']) if i['current_price'] else '' }}</td>
+                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['pb']|round(1) if i['pb'] else '' }}</td>
 
                     </tr>
                 {% endfor %}

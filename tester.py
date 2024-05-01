@@ -69,6 +69,10 @@ def trade_it(ticker, capital):
 
     cagr = ((balance/starting_investment)**(1/periods))-1
 
+    try:
+        pb = current_price / book_value
+    except:
+        pb = ''
 
     resulting_data = {
         'ticker': ticker,
@@ -87,6 +91,7 @@ def trade_it(ticker, capital):
         'current_ratio' : current_ratio,
         'debt_equity' : debt_equity,
         'current_price' : current_price,
-        'book_value' : book_value
+        'book_value' : book_value,
+        'pb': pb
     }
     return resulting_data
