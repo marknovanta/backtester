@@ -99,5 +99,6 @@ tickers = [
     'ARE',
     'EPRT',
     'CCI',
-    'ADC'
+    'ADC',
+    'ANSS'
 ]
