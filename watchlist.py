@@ -101,5 +101,9 @@ tickers = [
     'CCI',
     'ADC',
     'ANSS',
-    'CB'
+    'CB',
+    'DHI',
+    'TEL',
+    'PHM',
+    'SNA'
 ]
