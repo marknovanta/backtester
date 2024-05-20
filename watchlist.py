@@ -105,5 +105,6 @@ tickers = [
     'DHI',
     'TEL',
     'PHM',
-    'SNA'
+    'SNA',
+    'STT'
 ]
