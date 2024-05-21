@@ -3,10 +3,13 @@ import os
 import webbrowser
 from threading import Timer
 from backtest import get_info
-from watchlist import tickers
+from watchlist import tickers_invest, tickers_swing
 
-
-info = get_info(tickers)
+answer = input('Invest(i) or swing(s)? ')
+if answer == 'i':
+    info = get_info(tickers_invest)
+elif answer == 's':
+    info = get_info(tickers_swing)
 
 app = Flask(__name__)
 

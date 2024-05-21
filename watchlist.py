@@ -1,5 +1,5 @@
 # INVESTING
-""" tickers = [
+tickers_invest = [
     'SPY','QQQ','WPC','NNN','EPR','FRT','O','GOOD','BLK','KO','JNJ','PG','AAPL',
     'MCD','LMT','AXP','SBUX','INTC','VZ','AFL','SRCE','MAIN','CMCSA','CVX',
     'JPM','AMZN','GOOGL','MSFT','FDX','NVDA','WMT','ADP','UNH','HPQ','C',
@@ -10,10 +10,10 @@
     'PEP','SPGI','PFE','VOW3.DE','MBG.DE','CAG','NYCB','ABR','NWL','DVN',
     'MO','PARA','MCO','AVGO','SEIC','VICI','ARE','EPRT','CCI','ADC','ANSS',
     'CB','DHI','TEL','PHM','SNA','STT'
-] """
+]
 
 # SWNIG
-tickers = [
+tickers_swing = [
     'ACI','AES','AGR','ALLY','AMH','APA','ARCC','BAC','BAX','BEN','BEPC','BKR',
     'BMY','CAG','CFG','CG','CMCSA','CNA','CNP','CPB','CQP','CRBG','CSCO','CSX',
     'CTRA','DOC','EPD','EQH','EQT','ET','EXC','F','FE','FITB','FLEX','FOX','FTI',
