@@ -6,7 +6,8 @@ from backtest import get_info
 from watchlist import tickers_invest, tickers_swing
 
 operativity = input('Invest(i) or swing(s)? ')
-interval = input('What interval? (1d, 1wk, 1mo,) ')
+# interval = input('What interval? (1d, 1wk, 1mo,) ')
+interval = '1mo'
 if operativity == 'i':
     info = get_info(tickers_invest, interval)
 elif operativity == 's':
