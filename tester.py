@@ -65,7 +65,10 @@ def trade_it(ticker, capital):
 
         period_counter +=1
 
-    strategy_yield = (balance - starting_investment) / starting_investment
+    try:
+        strategy_yield = (balance - starting_investment) / starting_investment
+    except ZeroDivisionError:
+        strategy_yield = 0
 
     cagr = ((balance/starting_investment)**(1/periods))-1
 
