@@ -58,7 +58,6 @@ def clean_data(ticker):
     data_closing.pop()
 
     # calculate moving average
-
     period = 10
 
     ma = []
