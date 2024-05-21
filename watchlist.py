@@ -51,3 +51,6 @@ tickers_swing = [
     'SSNC','STT','STX','SWK','SWKS','SYY','TECH','TJX','TSN','TXT','VRT',
     'WEC','WFC','WMT','WPC','WRB','WRK','WYNN','XEL'
 ] """
+
+# TEST
+# tickers_invest = ['AAPL']

@@ -20,7 +20,11 @@ def open_browser():
 
 @app.route('/')
 def index():
-    return render_template('index.html', info=info)
+    data = []
+    for i in info:
+        if i['cagr'] > 0.03:
+            data.append(i)
+    return render_template('index.html', info=data)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
