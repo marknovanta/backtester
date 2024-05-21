@@ -70,7 +70,10 @@ def trade_it(ticker, capital):
     except ZeroDivisionError:
         strategy_yield = 0
 
-    cagr = ((balance/starting_investment)**(1/periods))-1
+    try:
+        cagr = ((balance/starting_investment)**(1/periods))-1
+    except ZeroDivisionError:
+        cagr = 0
 
     try:
         pb = current_price / book_value
