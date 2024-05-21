@@ -13,7 +13,7 @@
 ] """
 
 # SWNIG
-ticker = [
+tickers = [
     'ACI','AES','AGR','ALLY','AMH','APA','ARCC','BAC','BAX','BEN','BEPC','BKR',
     'BMY','CAG','CFG','CG','CMCSA','CNA','CNP','CPB','CQP','CRBG','CSCO','CSX',
     'CTRA','DOC','EPD','EQH','EQT','ET','EXC','F','FE','FITB','FLEX','FOX','FTI',
