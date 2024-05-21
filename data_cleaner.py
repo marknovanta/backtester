@@ -4,7 +4,7 @@ import yfinance as yf
 def clean_data(ticker):
 
     # INTERVALS: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo
-    interval = '1mo'
+    interval = '1d'
 
     print(f'Processing {ticker} ...')
     ticker = yf.Ticker(ticker)
@@ -73,7 +73,7 @@ def clean_data(ticker):
         if idx < period-1:
             data_clean[i] = 0
             continue
-        data_clean[i] = ma[idx - 9]
+        data_clean[i] = ma[idx - (period-1)]
 
     data.reset_index(inplace=True)
     dates = []

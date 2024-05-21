@@ -13,7 +13,7 @@ tickers_invest = [
 ]
 
 # SWNIG
-""" tickers_swing = [
+tickers_swing = [
     'ACI','AES','AGR','ALLY','AMH','APA','ARCC','BAC','BAX','BEN','BEPC','BKR',
     'BMY','CAG','CFG','CG','CMCSA','CNA','CNP','CPB','CQP','CRBG','CSCO','CSX',
     'CTRA','DOC','EPD','EQH','EQT','ET','EXC','F','FE','FITB','FLEX','FOX','FTI',
@@ -30,10 +30,10 @@ tickers_invest = [
     'OKE','OMC','OTIS','OVV','OXY','PEG','PFG','PM','RBA','REG','SBUX','SCHW','SCI','SO','SRE',
     'SSNC','STT','STX','SWK','SWKS','SYY','TAP','TECH','TJX','TRU','TSN','TXT','VRT','VST',
     'WEC','WFC','WMT','WPC','WRB','WRK','WYNN','XEL'
-] """
+]
 
 # SWNIG FILTERED (removed tickers with negative CAGR)
-tickers_swing = [
+""" tickers_swing = [
     'ACI','AES','AMH','BAC','BAX','BEN','BKR',
     'BMY','CAG','CMCSA','CNA','CNP','CPB','CQP','CRBG','CSCO','CSX',
     'CTRA','DOC','EPD','EQT','ET','EXC','F','FE','FITB','FLEX','FTI',
@@ -50,4 +50,4 @@ tickers_swing = [
     'OKE','OMC','OTIS','OVV','OXY','PEG','PFG','RBA','REG','SBUX','SCHW','SCI','SO','SRE',
     'SSNC','STT','STX','SWK','SWKS','SYY','TECH','TJX','TSN','TXT','VRT',
     'WEC','WFC','WMT','WPC','WRB','WRK','WYNN','XEL'
-]
+] """
