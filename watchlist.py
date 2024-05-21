@@ -28,6 +28,6 @@ tickers = [
     'FIS','FNF','FTV','FWONA','GEHC','GGG','GILD','GIS','HWM','IFF','IR','IRM','K','KO','KR',
     'L','LNT','LW','MAS','MCHP','MDLZ','MET','MKC','MRVL','NDAQ','NEE','NKE','NRG','NTRS','O',
     'OKE','OMC','OTIS','OVV','OXY','PEG','PFG','PM','RBA','REG','SBUX','SCHW','SCI','SO','SRE',
-    'SSNC','STT','STX','SWK','SWKS','SYY','TAP','TECH','TJX','TRU','TSN','TXT','VLTO','VRT','VST',
+    'SSNC','STT','STX','SWK','SWKS','SYY','TAP','TECH','TJX','TRU','TSN','TXT','VRT','VST',
     'WEC','WFC','WMT','WPC','WRB','WRK','WYNN','XEL'
 ]
