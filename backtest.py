@@ -1,6 +1,6 @@
 from tester import trade_it
 
-def get_info(tickers):
+def get_info(tickers, interval):
 
     capital = 1000
 
@@ -9,7 +9,7 @@ def get_info(tickers):
 
     for t in tickers:
 
-        info.append(trade_it(t, capital))
+        info.append(trade_it(t, capital, interval))
 
     return info
 

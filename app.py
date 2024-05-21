@@ -5,11 +5,12 @@ from threading import Timer
 from backtest import get_info
 from watchlist import tickers_invest, tickers_swing
 
-answer = input('Invest(i) or swing(s)? ')
-if answer == 'i':
-    info = get_info(tickers_invest)
-elif answer == 's':
-    info = get_info(tickers_swing)
+operativity = input('Invest(i) or swing(s)? ')
+interval = input('What interval? (1d, 1wk, 1mo,) ')
+if operativity == 'i':
+    info = get_info(tickers_invest, interval)
+elif operativity == 's':
+    info = get_info(tickers_swing, interval)
 
 app = Flask(__name__)
 

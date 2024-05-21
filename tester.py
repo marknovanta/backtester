@@ -1,9 +1,9 @@
 from data_cleaner import clean_data
 import math
 
-def trade_it(ticker, capital):
+def trade_it(ticker, capital, interval):
     # provide data for cleaning
-    data = clean_data(ticker)
+    data = clean_data(ticker, interval)
     periods = data['years']
     entry = data['entry']
     name = data['name']
