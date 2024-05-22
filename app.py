@@ -4,6 +4,12 @@ import webbrowser
 from threading import Timer
 from backtest import get_info
 from watchlist import tickers_invest, tickers_swing
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv('api_key')
+
+
 
 operativity = input('Invest(i) or swing(s)? ')
 interval = input('What interval? (1wk, 1mo) ')
