@@ -17,15 +17,18 @@ def chunked(iterable, chunk_size):
             break
         yield chunk
 
-
+automation = input('AUTO(a) or MANUAL(m)? ')
 operativity = input('INVEST(i) or SWING(s)? ')
 interval = input('What interval? (1wk, 1mo) ')
-# interval = '1mo'
-if operativity == 'i':
+
+if operativity == 'i' and automation == 'm':
     info = get_info(tickers_invest, interval)
-elif operativity == 's':
-    #info = get_info(tickers_swing, interval)
-    tickers = get_tickers()
+
+elif operativity == 's' and automation == 'm':
+    info = get_info(tickers_swing, interval)
+
+elif automation == 'a':
+    tickers = get_tickers(operativity)
     if len(tickers) > 150:
         chunk_size = 150
         info = []
