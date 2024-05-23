@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css"
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
+
+    <style>
+        /* Webkit browsers */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2e2e2e;  /* Dark background for the track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #555;  /* Dark color for the thumb */
+            border-radius: 10px;  /* Rounded corners for the thumb */
+            border: 3px solid #2e2e2e;  /* Optional: space around the thumb */
+        }
+
+        /* Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #555 #2e2e2e;
+        }
+    </style>
+
 
     <title>Backtest</title>
 </head>
