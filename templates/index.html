@@ -38,7 +38,7 @@
         <h1>Backtest 10 MA ({{ interval }})</h1>
         <table id="myTable" class="table table-dark table-hover table-auto mt-3 pl-0">
             <thead class="sticky-top">
-              <tr>
+              <tr class="--bs-light-bg-subtle">
                 <th scope="col">TICKER</th>
                 <th scope="col">NAME</th>
                 <th scope="col">SECTOR</th>
@@ -50,7 +50,7 @@
                 <th scope="col">TRADES</th>
                 <th scope="col">WIN RATE</th>
 
-                <th scope="col">ENTRY/EXIT</th>
+                <th scope="col">ENTRY<br>EXIT</th>
 
                 <th scope="col">DIV YIELD</th>
                 <th scope="col">PAYOUT</th>
@@ -75,7 +75,7 @@
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '%0.1f' % (i['cagr']*100) }}%</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['period'] }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['trades'] }}</td>
-                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '%0.1f' % (i['win_rate']*100) }}%</td>
+                        <td style="color: #{{ '3dfc03' if i['win_rate'] > 0.5 else 'fc0303'}};">{{ '%0.1f' % (i['win_rate']*100) }}%</td>
 
                         {% if i['entry'] == 'entry' %}
                             <td style="background-color: #3dfc03;">GO</td>
@@ -86,12 +86,12 @@
                         {% endif %}
 
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '%0.1f' % (i['divYield']*100) +'%' if i['divYield'] else '' }}</td>
-                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '%0.1f' % (i['payout']*100) +'%' if i['payout'] else '' }}</td>
-                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['pe']|round(1) if i['pe'] else '' }}</td>
-                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['current_ratio']|round(1) if i['current_ratio'] else '' }}</td>
-                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ (i['debt_equity']/100)|round(1) if i['debt_equity'] else '' }}</td>
+                        <td style="color: #{{ '3dfc03' if i['payout'] < 0.75 else 'fc0303'}};">{{ '%0.1f' % (i['payout']*100) +'%' if i['payout'] else '' }}</td>
+                        <td style="color: #{{ '3dfc03' if i['pe'] < 15 else 'fc0303'}};">{{ i['pe']|round(1) if i['pe'] else '' }}</td>
+                        <td style="color: #{{ '3dfc03' if i['current_ratio'] > 1.5 else 'fc0303'}};">{{ i['current_ratio']|round(1) if i['current_ratio'] else '' }}</td>
+                        <td style="color: #{{ '3dfc03' if i['debt_equity'] < 50 else 'fc0303'}};">{{ (i['debt_equity']/100)|round(1) if i['debt_equity'] else '' }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '${:,.2f}'.format(i['book_value']) if i['book_value'] else '' }}</td>
-                        <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '${:,.2f}'.format(i['current_price']) if i['current_price'] else '' }}</td>
+                        <td class="text-warning">{{ '${:,.2f}'.format(i['current_price']) if i['current_price'] else '' }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['pb']|round(1) if i['pb'] else '' }}</td>
 
                     </tr>
