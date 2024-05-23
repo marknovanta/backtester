@@ -29,13 +29,12 @@
             scrollbar-color: #555 #2e2e2e;
         }
 
-        /* Custom styles for the DataTables pagination dropdown */
-        .dataTables_length label {
+        .custom-dt-length label {
             color: white;
         }
-        .dataTables_length select {
-            color: black; /* Change this to the desired text color */
-            background-color: white; /* Change this to the desired background color */
+        .custom-dt-length select {
+            color: white; /* Change this to the desired text color */
+            background-color: #212529; /* Change this to the desired background color */
         }
     </style>
 
@@ -114,7 +113,16 @@
     <script>
     $(document).ready(function() {
         $('#myTable').DataTable({
-            paging: true
+            paging: true, // Enable pagination
+            pageLength: 100, // Default number of items per page
+            language: {
+                lengthMenu: '<div class="custom-dt-length">Items per page:<select class="custom-select custom-select-sm form-control form-control-sm">'+
+                            '<option value="10">10</option>'+
+                            '<option value="25">25</option>'+
+                            '<option value="50">50</option>'+
+                            '<option value="100">100</option>'+
+                            '</select></div>'
+            }
         });
     });
     </script>
