@@ -34,6 +34,8 @@ def trade_it(ticker, capital, interval, id, info_q):
     starting_balance = capital
     balance = starting_balance
     trades = 0
+    wins = 0
+    losses = 0
     size = 0
     position_open = False
     entry_price = None
@@ -52,6 +54,10 @@ def trade_it(ticker, capital, interval, id, info_q):
         if position_open is True and float(key) < float(value):
             exit_price = float(key)
             result = (exit_price - entry_price)*size
+            if result > 0:
+                wins += 1
+            elif result < 0:
+                losses += 1
             balance += result
             position_open = False
 
@@ -80,6 +86,11 @@ def trade_it(ticker, capital, interval, id, info_q):
     except:
         pb = ''
 
+    try:
+        win_rate = wins / (wins + losses)
+    except:
+        win_rate = 0
+
     resulting_data = {
         'id': id,
         'ticker': ticker,
@@ -89,6 +100,7 @@ def trade_it(ticker, capital, interval, id, info_q):
         'cagr': cagr,
         'period': periods,
         'trades': trades,
+        'win_rate': win_rate,
         'entry': entry,
         'name': name,
         'sector': sector,
