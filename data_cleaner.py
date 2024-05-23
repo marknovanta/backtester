@@ -32,6 +32,8 @@ def clean_data(ticker, interval):
         pe = info['trailingPE']
     except:
         pe = 0
+    if not isinstance(pe, (int, float)):
+        pe = 0
 
     try:
         current_ratio = info['currentRatio']

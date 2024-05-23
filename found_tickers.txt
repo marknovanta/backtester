@@ -15,7 +15,6 @@
 {"symbol": "ABVX", "name": "Abivax SA American Depositary Shares", "price": 14.3, "exchange": "NASDAQ", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "AC", "name": "Associated Capital Group, Inc.", "price": 34.36, "exchange": "New York Stock Exchange", "exchangeShortName": "NYSE", "type": "stock"}
 {"symbol": "ACA", "name": "Arcosa, Inc.", "price": 85.41, "exchange": "New York Stock Exchange", "exchangeShortName": "NYSE", "type": "stock"}
-{"symbol": "ACAB", "name": "Atlantic Coastal Acquisition Corp. II", "price": 11.42, "exchange": "NASDAQ Global Market", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "ACABU", "name": "Atlantic Coastal Acquisition Corp. II", "price": 10.8, "exchange": "NASDAQ Global Market", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "ACAC", "name": "Acri Capital Acquisition Corporation", "price": 11.3, "exchange": "NASDAQ Global Market", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "ACAD", "name": "ACADIA Pharmaceuticals Inc.", "price": 15.82, "exchange": "NASDAQ Global Select", "exchangeShortName": "NASDAQ", "type": "stock"}
@@ -956,6 +955,7 @@
 {"symbol": "FELE", "name": "Franklin Electric Co., Inc.", "price": 99.04, "exchange": "NASDAQ Global Select", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "FER", "name": "Ferrovial SE", "price": 40.12, "exchange": "NASDAQ Global Select", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "FET", "name": "Forum Energy Technologies, Inc.", "price": 18.4, "exchange": "New York Stock Exchange", "exchangeShortName": "NYSE", "type": "stock"}
+{"symbol": "FEXD", "name": "Fintech Ecosystem Development Corp.", "price": 11.22, "exchange": "NASDAQ Global Market", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "FFBC", "name": "First Financial Bancorp.", "price": 23.08, "exchange": "NASDAQ Global Select", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "FFBW", "name": "FFBW, Inc.", "price": 13.01, "exchange": "NASDAQ Capital Market", "exchangeShortName": "NASDAQ", "type": "stock"}
 {"symbol": "FFIC", "name": "Flushing Financial Corporation", "price": 13.51, "exchange": "NASDAQ Global Select", "exchangeShortName": "NASDAQ", "type": "stock"}

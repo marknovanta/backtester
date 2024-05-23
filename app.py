@@ -5,6 +5,17 @@ from threading import Timer
 from backtest import get_info
 from watchlist import tickers_invest, tickers_swing
 from find_tickers import get_tickers
+from itertools import islice
+
+
+def chunked(iterable, chunk_size):
+    """Yield successive n-sized chunks from iterable."""
+    iterable = iter(iterable)
+    while True:
+        chunk = list(islice(iterable, chunk_size))
+        if not chunk:
+            break
+        yield chunk
 
 
 operativity = input('Invest(i) or swing(s)? ')
@@ -15,7 +26,15 @@ if operativity == 'i':
 elif operativity == 's':
     #info = get_info(tickers_swing, interval)
     tickers = get_tickers()
-    info = get_info(tickers, interval)
+    if len(tickers) > 150:
+        chunk_size = 121
+        info = []
+        for chunk in chunked(tickers, chunk_size):
+            i = get_info(chunk, interval)
+            for x in i:
+                info.append(x)
+    else:
+        info = get_info(tickers, interval)
     print(len(info))
 
 app = Flask(__name__)

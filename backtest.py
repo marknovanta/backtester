@@ -1,5 +1,6 @@
 from tester import trade_it
 import threading
+import queue
 
 def get_info(tickers, interval):
 
@@ -14,7 +15,7 @@ def get_info(tickers, interval):
         info.append(trade_it(t, capital, interval)) """
 
 
-    def append_result(t, capital, interval, id, semaphore):
+    """ def append_result(t, capital, interval, id, semaphore):
         result = trade_it(t, capital, interval, id)
         with semaphore:
             info.append(result)
@@ -32,7 +33,23 @@ def get_info(tickers, interval):
 
 
     for thread in threads:
+        thread.join() """
+
+    info_q = queue.Queue()
+    id = 0
+    threads = []
+    for t in tickers:
+        thread = threading.Thread(target=trade_it, args=(t, capital, interval, id, info_q))
+        threads.append(thread)
+        thread.start()
+        id += 1
+
+    for thread in threads:
         thread.join()
+
+    while not info_q.empty():
+        i = info_q.get()
+        info.append(i)
 
     info_s = sorted(info, key=lambda x: x['id'])
     return info_s

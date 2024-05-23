@@ -1,7 +1,7 @@
 from data_cleaner import clean_data
 import math
 
-def trade_it(ticker, capital, interval, id):
+def trade_it(ticker, capital, interval, id, info_q):
     # provide data for cleaning
     data = clean_data(ticker, interval)
     periods = data['years']
@@ -101,4 +101,5 @@ def trade_it(ticker, capital, interval, id):
         'book_value' : book_value,
         'pb': pb
     }
+    info_q.put(resulting_data)
     return resulting_data
