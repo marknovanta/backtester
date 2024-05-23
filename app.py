@@ -12,11 +12,11 @@ interval = input('What interval? (1wk, 1mo) ')
 # interval = '1mo'
 if operativity == 'i':
     info = get_info(tickers_invest, interval)
-    print(len(info))
 elif operativity == 's':
     #info = get_info(tickers_swing, interval)
     tickers = get_tickers()
-    get_info(tickers, interval)
+    info = get_info(tickers, interval)
+    print(len(info))
 
 app = Flask(__name__)
 

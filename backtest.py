@@ -14,15 +14,18 @@ def get_info(tickers, interval):
         info.append(trade_it(t, capital, interval)) """
 
 
-    def append_result(t, capital, interval, id):
+    def append_result(t, capital, interval, id, semaphore):
         result = trade_it(t, capital, interval, id)
-        info.append(result)
+        with semaphore:
+            info.append(result)
 
+    max_threads = 112
+    semaphore = threading.Semaphore(max_threads)
 
     threads = []
     id = 0
     for t in tickers:
-        thread = threading.Thread(target=append_result, args=(t, capital, interval, id))
+        thread = threading.Thread(target=append_result, args=(t, capital, interval, id, semaphore))
         thread.start()
         threads.append(thread)
         id += 1
