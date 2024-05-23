@@ -65,7 +65,7 @@
             <tbody>
                 {% for i in info %}
                     <tr>
-                        <th scope="row" style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['ticker'] }}</th>
+                        <th scope="row" style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};"><a href="https://www.tradingview.com/chart/ShaHpx54/?symbol={{ i['ticker'] }}" style="color: inherit;" target="_blank">{{ i['ticker'] }}</a></th>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['name'] }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['sector'] }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '${:,.2f}'.format(i['initial investment']) }}</td>
