@@ -18,7 +18,7 @@ def chunked(iterable, chunk_size):
         yield chunk
 
 
-operativity = input('Invest(i) or swing(s)? ')
+operativity = input('INVEST(i) or SWING(s)? ')
 interval = input('What interval? (1wk, 1mo) ')
 # interval = '1mo'
 if operativity == 'i':
