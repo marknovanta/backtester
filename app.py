@@ -27,7 +27,7 @@ elif operativity == 's':
     #info = get_info(tickers_swing, interval)
     tickers = get_tickers()
     if len(tickers) > 150:
-        chunk_size = 121
+        chunk_size = 150
         info = []
         for chunk in chunked(tickers, chunk_size):
             i = get_info(chunk, interval)
@@ -46,8 +46,12 @@ def open_browser():
 def index():
     data = []
     for i in info:
-        if i['cagr'] > 0.03 and i['period'] >= 10:
+        c1 = i['cagr'] > 0.03
+        c2 = i['period'] >= 10
+
+        if c1 and c2:
             data.append(i)
+
     return render_template('index.html', info=data, interval=interval)
 
 if __name__ == '__main__':
