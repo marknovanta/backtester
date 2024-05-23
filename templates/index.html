@@ -48,7 +48,7 @@
                 <th scope="col">CAGR</th>
                 <th scope="col">YEARS</th>
                 <th scope="col">TRADES</th>
-                <th scope="col">WIN RATE</th>
+                <!-- <th scope="col">WIN RATE</th> -->
 
                 <th scope="col">ENTRY<br>EXIT</th>
 
@@ -75,7 +75,7 @@
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '%0.1f' % (i['cagr']*100) }}%</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['period'] }}</td>
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ i['trades'] }}</td>
-                        <td style="color: #{{ '3dfc03' if i['win_rate'] > 0.5 else 'fc0303'}};">{{ '%0.1f' % (i['win_rate']*100) }}%</td>
+                        <!-- <td style="color: #{{ '3dfc03' if i['win_rate'] > 0.5 else 'fc0303'}};">{{ '%0.1f' % (i['win_rate']*100) }}%</td> -->
 
                         {% if i['entry'] == 'entry' %}
                             <td style="background-color: #3dfc03;">GO</td>
