@@ -4,11 +4,7 @@ import webbrowser
 from threading import Timer
 from backtest import get_info
 from watchlist import tickers_invest, tickers_swing
-from dotenv import load_dotenv
-
-load_dotenv()
-api_key = os.getenv('api_key')
-
+from find_tickers import get_tickers
 
 
 operativity = input('Invest(i) or swing(s)? ')
@@ -16,8 +12,11 @@ interval = input('What interval? (1wk, 1mo) ')
 # interval = '1mo'
 if operativity == 'i':
     info = get_info(tickers_invest, interval)
+    print(len(info))
 elif operativity == 's':
-    info = get_info(tickers_swing, interval)
+    #info = get_info(tickers_swing, interval)
+    tickers = get_tickers()
+    get_info(tickers, interval)
 
 app = Flask(__name__)
 
