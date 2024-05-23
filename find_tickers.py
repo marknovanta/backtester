@@ -6,7 +6,7 @@ import json
 def get_tickers():
     load_dotenv()
     api_key = os.getenv('api_key')
-    url = f'https://financialmodelingprep.com/api/v3/stock/list?apikey={api_key}'
+    url = f'https://financialmodelingprep.com/api/v3/available-traded/list?apikey={api_key}'
     try:
         r = requests.get(url)
         r.raise_for_status()
@@ -23,11 +23,12 @@ def get_tickers():
                 continue
 
         with open('found_tickers.txt', 'w') as file:
-            for i in filtered_data:
+            for i in sorted(filtered_data, key=lambda x: x['symbol']):
                 file.write(json.dumps(i))
                 file.write('\n')
 
-        return tickers
+        tickers_s = sorted(tickers)
+        return tickers_s
     except requests.exceptions.RequestException as e:
         print('Error fetching data:', e)
         return []
