@@ -48,7 +48,7 @@ def index():
     for i in info:
         if i['cagr'] > 0.03 and i['period'] >= 10:
             data.append(i)
-    return render_template('index.html', info=data)
+    return render_template('index.html', info=data, interval=interval)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
