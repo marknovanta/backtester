@@ -42,6 +42,7 @@ def trade_it(ticker, capital, interval, id, info_q):
     exit_price = None
     result = None
     starting_investment = 0
+    balance_hist = [balance]
 
     # trade
     period_counter = 1
@@ -59,6 +60,7 @@ def trade_it(ticker, capital, interval, id, info_q):
             elif result < 0:
                 losses += 1
             balance += result
+            balance_hist.append(balance)
             position_open = False
 
         if position_open is False and float(key) > float(value):
@@ -111,7 +113,9 @@ def trade_it(ticker, capital, interval, id, info_q):
         'debt_equity' : debt_equity,
         'current_price' : current_price,
         'book_value' : book_value,
-        'pb': pb
+        'pb': pb,
+        'balance_hist': balance_hist
     }
+    print(balance_hist)
     info_q.put(resulting_data)
     return resulting_data
