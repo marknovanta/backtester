@@ -21,6 +21,7 @@ def chunked(iterable, chunk_size):
 automation = input('AUTO(a) or MANUAL(m)? ')
 operativity = input('INVEST(i) or SWING(s)? ')
 interval = input('What interval? (1wk, 1mo) ')
+balance_plot = False #BALANCE PLOTTING ON/OFF
 
 if operativity == 'i' and automation == 'm':
     info = get_info(tickers_invest, interval)
@@ -57,7 +58,7 @@ def index():
             data.append(i)
 
             # GENERATE PNG OF BALANCE HISTORY
-            if i['entry'] == 'entry':
+            if i['entry'] == 'entry' and balance_plot:
                 t = i['ticker']
                 cagr = round(i['cagr']*100,1)
                 yld = round(i['yield']*100,1)
