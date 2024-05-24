@@ -59,15 +59,16 @@ def index():
             # GENERATE PNG OF BALANCE HISTORY
             if i['entry'] == 'entry':
                 t = i['ticker']
-
+                cagr = round(i['cagr']*100,1)
+                yld = round(i['yield']*100,1)
                 # Create the plot
                 plt.plot(i['balance_hist'])
                 plt.xlabel('Time')
                 plt.ylabel('Balance')
-                plt.title(f'{t} {operativity} {interval}')
+                plt.title(f'{t} {interval} - CAGR:{cagr}% YIELD:{yld}%')
 
                 # Save the plot as PNG
-                plt.savefig(f'charts/{t}_{operativity}_{interval}.png', format='png')
+                plt.savefig(f'charts/{t}_{interval}.png', format='png')
 
                 # Close the plot
                 plt.close()
