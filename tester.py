@@ -116,6 +116,6 @@ def trade_it(ticker, capital, interval, id, info_q):
         'pb': pb,
         'balance_hist': balance_hist
     }
-    print(balance_hist)
+
     info_q.put(resulting_data)
     return resulting_data

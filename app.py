@@ -6,6 +6,7 @@ from backtest import get_info
 from watchlist import tickers_invest, tickers_swing
 from find_tickers import get_tickers
 from itertools import islice
+import matplotlib.pyplot as plt
 
 
 def chunked(iterable, chunk_size):
@@ -54,6 +55,23 @@ def index():
 
         if c1 and c2:
             data.append(i)
+
+            # GENERATE PNG OF BALANCE HISTORY
+            if i['entry'] == 'entry':
+                t = i['ticker']
+
+                # Create the plot
+                plt.plot(i['balance_hist'])
+                plt.xlabel('Time')
+                plt.ylabel('Balance')
+                plt.title(f'{t} {operativity} {interval}')
+
+                # Save the plot as PNG
+                plt.savefig(f'charts/{t}_{operativity}_{interval}.png', format='png')
+
+                # Close the plot
+                plt.close()
+
 
     return render_template('index.html', info=data, interval=interval)
 
