@@ -64,7 +64,7 @@ def index():
                 yld = round(i['yield']*100,1)
                 # Create the plot
                 plt.plot(i['balance_hist'])
-                plt.xlabel('Time')
+                plt.xlabel('Trades')
                 plt.ylabel('Balance')
                 plt.title(f'{t} {interval} - CAGR:{cagr}% YIELD:{yld}%')
 
