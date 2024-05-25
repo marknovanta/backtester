@@ -21,7 +21,11 @@ def chunked(iterable, chunk_size):
 automation = input('AUTO(a) or MANUAL(m)? ')
 operativity = input('INVEST(i) or SWING(s)? ')
 interval = input('What interval? (1wk, 1mo) ')
-balance_plot = False #BALANCE PLOTTING ON/OFF
+charts = input('Plot balances? (y/n) ')
+if charts == 'y':
+    balance_plot = True #BALANCE PLOTTING ON/OFF
+elif charts == 'n':
+    balance_plot = False
 
 if operativity == 'i' and automation == 'm':
     info = get_info(tickers_invest, interval)
