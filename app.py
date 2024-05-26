@@ -20,7 +20,7 @@ def chunked(iterable, chunk_size):
 
 automation = input('AUTO(a) or MANUAL(m)? ')
 operativity = input('INVEST(i) or SWING(s)? ')
-interval = input('What interval? (1wk, 1mo) ')
+interval = input('What interval? (1d, 1wk, 1mo) ')
 period = int(input('Moving Average period? '))
 charts = input('Plot balances? (y/n) ')
 if charts == 'y':
@@ -56,7 +56,8 @@ def open_browser():
 def index():
     data = []
     for i in info:
-        c1 = i['cagr'] > 0 # 0.03 to cover inflation
+        ci = True
+        #c1 = i['cagr'] > 0 # 0.03 to cover inflation
         c2 = i['period'] >= 10
 
         if c1 and c2:
