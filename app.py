@@ -55,7 +55,7 @@ def open_browser():
 def index():
     data = []
     for i in info:
-        c1 = i['cagr'] > 0.03
+        c1 = i['cagr'] > 0 # 0.03 to cover inflation
         c2 = i['period'] >= 10
 
         if c1 and c2:
