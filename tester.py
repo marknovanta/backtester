@@ -1,9 +1,10 @@
 from data_cleaner import clean_data
 import math
 
-def trade_it(ticker, capital, interval, id, info_q):
+def trade_it(ticker, capital, interval, id, info_q, period):
     # provide data for cleaning
-    data = clean_data(ticker, interval)
+    #period = 10 #MOVING AVERAGE PERIOD
+    data = clean_data(ticker, interval, period)
     periods = data['years']
     entry = data['entry']
     name = data['name']
@@ -47,7 +48,7 @@ def trade_it(ticker, capital, interval, id, info_q):
     # trade
     period_counter = 1
     for key, value in data.items():
-        if period_counter < 10:
+        if period_counter < period:
             period_counter += 1
             continue
 

@@ -2,7 +2,7 @@ from tester import trade_it
 import threading
 import queue
 
-def get_info(tickers, interval):
+def get_info(tickers, interval, period):
 
     capital = 1000
 
@@ -18,8 +18,7 @@ def get_info(tickers, interval):
     """ def append_result(t, capital, interval, id, semaphore):
         result = trade_it(t, capital, interval, id)
         with semaphore:
-            info.append(result)
-
+            info.append(resul10
     max_threads = 112
     semaphore = threading.Semaphore(max_threads)
 
@@ -39,7 +38,7 @@ def get_info(tickers, interval):
     id = 0
     threads = []
     for t in tickers:
-        thread = threading.Thread(target=trade_it, args=(t, capital, interval, id, info_q))
+        thread = threading.Thread(target=trade_it, args=(t, capital, interval, id, info_q, period))
         threads.append(thread)
         thread.start()
         id += 1

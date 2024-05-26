@@ -21,6 +21,7 @@ def chunked(iterable, chunk_size):
 automation = input('AUTO(a) or MANUAL(m)? ')
 operativity = input('INVEST(i) or SWING(s)? ')
 interval = input('What interval? (1wk, 1mo) ')
+period = int(input('Moving Average period? '))
 charts = input('Plot balances? (y/n) ')
 if charts == 'y':
     balance_plot = True #BALANCE PLOTTING ON/OFF
@@ -28,10 +29,10 @@ elif charts == 'n':
     balance_plot = False
 
 if operativity == 'i' and automation == 'm':
-    info = get_info(tickers_invest, interval)
+    info = get_info(tickers_invest, interval, period)
 
 elif operativity == 's' and automation == 'm':
-    info = get_info(tickers_swing, interval)
+    info = get_info(tickers_swing, interval, period)
 
 elif automation == 'a':
     tickers = get_tickers(operativity)
@@ -39,11 +40,11 @@ elif automation == 'a':
         chunk_size = 150
         info = []
         for chunk in chunked(tickers, chunk_size):
-            i = get_info(chunk, interval)
+            i = get_info(chunk, interval, period)
             for x in i:
                 info.append(x)
     else:
-        info = get_info(tickers, interval)
+        info = get_info(tickers, interval, period)
     print(len(info))
 
 app = Flask(__name__)
