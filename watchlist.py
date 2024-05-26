@@ -1,6 +1,8 @@
 # INVESTING
 tickers_invest = [
-    'SPY','QQQ','WPC','NNN','EPR','FRT','O','GOOD','BLK','KO','JNJ','PG','AAPL',
+    'SPY','QQQ',
+    'XLU','XLE','XLRE','XLP','XLY','XLV','XLI','XLB','XLK','XLF','XLC',
+    'WPC','NNN','EPR','FRT','O','GOOD','BLK','KO','JNJ','PG','AAPL',
     'MCD','LMT','AXP','SBUX','INTC','VZ','AFL','SRCE','MAIN','CMCSA','CVX',
     'JPM','AMZN','GOOGL','MSFT','FDX','NVDA','WMT','ADP','UNH','HPQ','C',
     'GS','MMM','BAC','KR','PRU','SYY','ABBV','INTU','LOW','CINF','DOV',
