@@ -86,11 +86,11 @@
                         <!-- <td style="color: #{{ '3dfc03' if i['win_rate'] > 0.5 else 'fc0303'}};">{{ '%0.1f' % (i['win_rate']*100) }}%</td> -->
 
                         {% if i['entry'] == 'entry' %}
-                            <td style="background-color: #3dfc03;">GO</td>
+                            <td style="background-color: #3dfc03;">ENTRY</td>
                         {% elif i['entry'] == 'exit' %}
-                            <td style="background-color: #fc0303;">STOP</td>
+                            <td style="background-color: #fc0303;">EXIT</td>
                         {% else %}
-                            <td></td>
+                            <td style="color: #212529;">wait</td>
                         {% endif %}
 
                         <td style="color: #{{ '3dfc03' if i['initial investment'] < i['final balance'] else 'fc0303'}};">{{ '%0.1f' % (i['divYield']*100) +'%' if i['divYield'] else '' }}</td>

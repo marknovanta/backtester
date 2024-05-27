@@ -23,7 +23,8 @@ operativity = input('INVEST(i) or SWING(s)? ')
 interval = input('What interval? (1d, 1wk, 1mo) ')
 #period = int(input('Moving Average period? '))
 period = 10 #MOVING AVERAGE PERIOD
-charts = input('Plot balances? (y/n) ')
+#charts = input('Plot balances? (y/n) ')
+charts = 'n'
 if charts == 'y':
     balance_plot = True #BALANCE PLOTTING ON/OFF
 elif charts == 'n':
