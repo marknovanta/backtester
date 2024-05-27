@@ -10,13 +10,14 @@ def get_tickers(operativity):
         r = requests.get(url)
         r.raise_for_status()
         data = r.json()
-        exchs = ['NASDAQ', 'NYSE']
+        exchs = ['NASDAQ', 'NYSE', 'AMEX']
         tickers = []
+
         for i in data:
             try:
                 if operativity == 's':
-                    c1 = float(i['price']) < 100 #min price
-                    c2 = float(i['price']) >= 0.01 #max price
+                    c1 = float(i['price']) < 100 #max price
+                    c2 = float(i['price']) >= 1 #min price
 
                 elif operativity == 'i':
                     c1 = float(i['price']) > 1 #min price
