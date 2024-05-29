@@ -9,6 +9,7 @@ def clean_data(ticker, interval, period):
     print(f'Processing {ticker} ...')
     ticker = yf.Ticker(ticker)
     info = ticker.info
+
     try:
         name = info['longName']
     except:
@@ -54,6 +55,11 @@ def clean_data(ticker, interval, period):
         book_value = info['bookValue']
     except:
         book_value = 0
+
+    try:
+        mkt_cap = info['marketCap']
+    except:
+        mkt_cap = 0
 
     data = ticker.history(period='max', interval=interval, prepost=True, auto_adjust=False, actions=False)
     data_closing = []
@@ -116,6 +122,7 @@ def clean_data(ticker, interval, period):
     data_clean['debt_equity'] = debt_equity
     data_clean['current_price'] = current_price
     data_clean['book_value'] = book_value
+    data_clean['mkt_cap'] = mkt_cap
 
     return data_clean
 

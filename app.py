@@ -25,6 +25,9 @@ interval = input('What interval? (1d, 1wk, 1mo) ')
 period = 10 #MOVING AVERAGE PERIOD
 #charts = input('Plot balances? (y/n) ')
 charts = 'n'
+
+cap = 800000000 # market cap filter
+
 if charts == 'y':
     balance_plot = True #BALANCE PLOTTING ON/OFF
 elif charts == 'n':
@@ -61,8 +64,9 @@ def index():
         c1 = True
         #c1 = i['cagr'] > 0 # 0.03 to cover inflation
         c2 = i['period'] >= 10
+        c3 = i['mkt_cap'] >= cap
 
-        if c1 and c2:
+        if c1 and c2 and c3:
             data.append(i)
 
             # GENERATE PNG OF BALANCE HISTORY

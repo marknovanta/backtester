@@ -17,6 +17,7 @@ def trade_it(ticker, capital, interval, id, info_q, period):
     debt_equity = data['debt_equity']
     current_price = data['current_price']
     book_value = data['book_value']
+    mkt_cap = data['mkt_cap']
 
     data.pop('divYield')
     data.pop('payout')
@@ -25,6 +26,7 @@ def trade_it(ticker, capital, interval, id, info_q, period):
     data.pop('debt_equity')
     data.pop('current_price')
     data.pop('book_value')
+    data.pop('mkt_cap')
 
     data.pop('name')
     data.pop('sector')
@@ -115,7 +117,8 @@ def trade_it(ticker, capital, interval, id, info_q, period):
         'current_price' : current_price,
         'book_value' : book_value,
         'pb': pb,
-        'balance_hist': balance_hist
+        'balance_hist': balance_hist,
+        'mkt_cap': mkt_cap
     }
 
     info_q.put(resulting_data)
