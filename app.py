@@ -38,6 +38,7 @@ elif charts == 'n':
 
 if operativity == 'i' and automation == 'm':
     info = get_info(tickers_invest, interval, period)
+    cap = 0
 
 elif operativity == 's' and automation == 'm':
     info = get_info(tickers_swing, interval, period)
