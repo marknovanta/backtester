@@ -67,7 +67,7 @@ def index():
     for i in info:
         c1 = True
         #c1 = i['cagr'] > 0 # 0.03 to cover inflation
-        c2 = i['period'] >= 10
+        c2 = i['period'] >= 0
         c3 = i['mkt_cap'] >= cap
 
         if c1 and c2 and c3:
