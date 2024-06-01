@@ -14,6 +14,13 @@ tickers_invest = [
     'CB','DHI','TEL','PHM','SNA','STT','AWR','NWN','UGI',
 ]
 
+# TOP INVESTING
+""" tickers_invest = [
+    'MSFT','GOOGL','ORCL','AAPL','NVDA','LMT','LLY','JNJ','JPM','BAC','AXP',
+    'V','MA','AMZN','WMT','COST','PG','KO','GE','CAT','NEE','CVX','XOM','UNH',
+    'NFLX','DIS','CMCSA','MCD','SBUX','TSLA','UPS','FDX','VZ','TMUS','WM'
+] """
+
 # SWNIG
 tickers_swing = [
     'ACI','AES','AGR','ALLY','AMH','APA','ARCC','BAC','BAX','BEN','BEPC','BKR',
