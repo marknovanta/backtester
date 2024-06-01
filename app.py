@@ -28,6 +28,9 @@ period = 10 #MOVING AVERAGE PERIOD
 #charts = input('Plot balances? (y/n) ')
 charts = 'n'
 
+# AUTO SWING => price less than $100
+# AUTO INVEST => price > $1
+
 # SET MKT CAP BASED ON OPERATIVITY
 if automation == 'a':
     if operativity == 'i':
