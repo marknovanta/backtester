@@ -27,7 +27,13 @@ interval = input('What interval? (1d, 1wk, 1mo) ')
 period = 10 #MOVING AVERAGE PERIOD
 #charts = input('Plot balances? (y/n) ')
 charts = 'n'
-cap = 800000000 # market cap filter
+
+# SET MKT CAP BASED ON OPERATIVITY
+if automation == 'a':
+    if operativity == 'i':
+        cap = 60000000000 # market cap filter (top min 60000000000, normal min 800000000)
+    elif operativity == 's':
+        cap = 800000000
 
 # -------------------------------------------------
 
@@ -43,6 +49,7 @@ if operativity == 'i' and automation == 'm':
 elif operativity == 's' and automation == 'm':
     info = get_info(tickers_swing, interval, period)
 
+# IF LIST TOO LONG, PROCESS IT IN BUNCHES
 elif automation == 'a':
     tickers = get_tickers(operativity)
     if len(tickers) > 150:
