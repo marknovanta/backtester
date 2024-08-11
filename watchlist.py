@@ -11,7 +11,7 @@ tickers_invest = [
     'DUK','HRL','ITW','ABT','SWK','BDX','KMB','PPG','TGT','GWW','ADM','NUE',
     'PEP','SPGI','PFE','VOW3.DE','MBG.DE','CAG','NYCB','ABR','NWL','DVN',
     'MO','PARA','MCO','AVGO','SEIC','VICI','ARE','EPRT','CCI','ADC','ANSS',
-    'CB','DHI','TEL','PHM','SNA','STT','AWR','NWN','UGI',
+    'CB','DHI','TEL','PHM','SNA','STT','AWR','NWN','UGI','OXY'
 ]
 
 # TOP INVESTING
